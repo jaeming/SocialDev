@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 
 gem 'foundation-rails'
+
+group :development do
+  gem 'rails_layout'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.10'
 
