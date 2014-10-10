@@ -1,0 +1,6 @@
+%section
+  %h1 All Posts
+  %hr/
+  - @posts.each do |post|
+    %h4= link_to post.title, post
+    %hr{:width => "60%"}/
