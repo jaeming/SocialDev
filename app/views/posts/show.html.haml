@@ -2,10 +2,11 @@
   .row
     .medium-2.columns
       &nbsp;
-    .medium-8.columns
+    .transition-it.medium-8.columns
       %h1= @post.title
       %hr/
       %p= @post.body
       %hr/
+      = link_to "Edit", edit_post_path(@post), class: 'button tiny alert'
     .medium-2.columns
       &nbsp;

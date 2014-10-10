@@ -14,3 +14,7 @@
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
+      %script
+        $(function() {
+        setTimeout( "$('.alert-box a.close').trigger('click.fndtn.alert');",2000 );
+        });
