@@ -8,28 +8,22 @@ body {
 
 h1 {
   color: tomato;
+  font-family: 'Roboto Slab', serif;
 }
 
 h3 {
+  font-family: 'Open Sans', sans-serif;
   margin: -15px 0 0 5px;
 }
 
 h4 {
+  font-family: 'Open Sans', sans-serif;
   font-size: 22px;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #484848;
-  padding: 20px;
-  border-top: 4px solid #414141;
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
-footer p {
-  color: #e9e9e9;
-  margin: 0 0 0 20px;
-  font-size: 14px;
-}
+
 

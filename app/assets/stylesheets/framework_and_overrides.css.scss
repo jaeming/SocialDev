@@ -2,13 +2,30 @@
 @import "foundation";
 
 // override for the 'Home' navigation link
+
+.top-bar {
+  background-color: #474747; }
+
 .top-bar .name {
   font-size: rem-calc(13);
   line-height: 45px; }
+
 .top-bar .name a {
   font-weight: normal;
   color: white;
   padding: 0 15px; }
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: #474747;
+    transition: all 500ms ease }
+
+.top-bar .name {
+  font-size: 1.6rem;
+  font-family: 'Lobster', cursive; }
+
+.contain-to-grid {
+  background-color: #474747; }
+
 
 
 
