@@ -63,3 +63,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'figaro', '1.0'
