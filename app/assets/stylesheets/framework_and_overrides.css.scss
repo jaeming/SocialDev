@@ -17,6 +17,7 @@
 
 .top-bar-section li:not(.has-form) a:not(.button) {
     background-color: #474747;
+    font-size: 1.1rem;
     transition: all 500ms ease }
 
 .top-bar .name {
@@ -73,3 +74,47 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+.custom-panel {
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg:#F5F5F5,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding:4px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:false
+  );
+  color: #474747;
+}
+
+
+ .user-info {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8rem;
+    padding-right: 13px;
+ }
+
+ .user-info a{
+    color: #474747;
+    transition: all 360ms ease
+ }
+
+  .user-info a:hover{
+    color: #fa8d7a;
+ }
+
+.devise-linkage {
+  margin-top: -15px;
+}
+
+.entry {
+  margin: 25px 15px 15px 0;
+}
+
+
+
+
+
+
+
+

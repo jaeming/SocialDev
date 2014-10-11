@@ -1,8 +1,13 @@
 %section
   %h1 Welcome to bloccit
   %h3
-    %small You've reached the bloccit homepage.
-  %hr/
+    %small Bloccit is a resource for sharing interesting things.
+  .clearfix
+    = link_to "Sign in", new_user_session_path, class: 'entry button alert radius left'
+    = link_to "Sign up", new_user_registration_path, class: 'entry button radius left'
+  %hr
+  %h2
+    Latest Posts
   .panel
     %h4
       %a{:href => "#"} Post 1 goes here.

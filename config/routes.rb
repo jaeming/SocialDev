@@ -1,8 +1,8 @@
 Bloccit::Application.routes.draw do
   devise_for :users
-resources :posts
+  resources :posts
 
-get 'about' => 'welcome#about'
+  get 'about' => 'welcome#about'
 
-    root to: 'welcome#index'
+  root to: 'welcome#index'
 end

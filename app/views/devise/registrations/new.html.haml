@@ -1,0 +1,24 @@
+%section
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .row
+      .medium-3.columns
+        &nbsp;
+      .medium-6.columns
+        %h1 Sign up
+        .panel
+          = f.label :email
+          = f.email_field :email, autofocus: true
+          = f.label :password, class: 'left'
+          - if @validatable
+            %label.left
+              &nbsp;(#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "off"
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off"
+          = f.submit "Sign up", class: 'button radius'
+        %hr
+        .devise-linkage
+        = render "devise/shared/links"
+      .medium-3.columns
+        &nbsp;
