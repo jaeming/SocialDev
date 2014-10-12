@@ -1,6 +1,7 @@
 ## A Social app for Developer
 Built in Rails 4.
 
+
 Development has just begun. I will keep a deployed demo current on [Heroku](http://snowful.herokuapp.com/).
 
 ###Cofig notes:
