@@ -1,1 +1,1 @@
-snowful::Application.config.secret_token = ENV['SECRET_TOKEN']
+bloccit::Application.config.secret_token = ENV['SECRET_TOKEN']
