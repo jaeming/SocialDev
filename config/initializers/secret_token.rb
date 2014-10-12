@@ -1,1 +1,1 @@
-bloccit::Application.config.secret_token = ENV['SECRET_TOKEN']
+Bloccit::Application.config.secret_token = ENV['SECRET_TOKEN']
