@@ -1,1 +1,1 @@
-Bloccit::Application.config.secret_key_base = ENV["SECRET_KEY_BASE"]
+Bloccit::Application.config.secret_key_base = ENV["DEVISE_SECRET_KEY"]
