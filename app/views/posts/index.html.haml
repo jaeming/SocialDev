@@ -3,4 +3,9 @@
   %hr/
   - @posts.each do |post|
     %h4= link_to post.title, post
+    %p
+      Submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.try(:name)}
+      %br/
+      = post.comments.count
+      Comments
     %hr{:width => "60%"}/
