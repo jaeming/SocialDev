@@ -1,6 +1,7 @@
 %section
   %h1 All Posts
-  %hr/
+  - if policy(Post.new).create?
+    = link_to "New Post", new_post_path, class: 'button round small alert'
   - @posts.each do |post|
     %h4= link_to post.title, post
     %p
