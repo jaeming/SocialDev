@@ -1,0 +1,17 @@
+%section
+  .row
+    .medium-2.columns
+      &nbsp;
+    .medium-8.columns
+      %h1.left Topics
+      - if policy(Topic.new).create?
+        = link_to "New Topic", new_topic_path, class: 'new-topic-button right tiny button round alert'
+      %hr
+      - @topics.each do |topic|
+        %h2
+          = link_to topic.name, topic
+        %p
+          = topic.description
+        %hr
+    .medium-2.columns
+      &nbsp;
