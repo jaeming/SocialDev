@@ -5,18 +5,19 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topics = Topic.new
-    authorize @topics
+    @topic = Topic.new
+    authorize @topic
   end
 
   def show
-    @topics = Topic.find(params[:id])
-    authorize @topics
+    @topic = Topic.find(params[:id])
+    @posts = @topic.posts
+    authorize @topic
   end
 
   def edit
     @topic = Topic.find(params[:id])
-    authorize @topics
+    authorize @topic
   end
 
 
@@ -33,7 +34,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    authorize @topics
+    authorize @topic
     if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
       redirect_to @topic
     else

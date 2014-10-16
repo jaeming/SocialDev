@@ -1,2 +1,20 @@
-%h1 Topics#show
-%p Find me in app/views/topics/show.html.haml
+%section
+  .row
+    .medium-2.columns
+      &nbsp;
+    .medium-8.columns
+      %h1.left
+        = @topic.name
+      - if policy(@topic).update?
+        = link_to "Edit Topic", edit_topic_path, class: 'left button round alert tiny topic-button'
+      -if policy(Post.new).create?
+        = link_to "New Post", new_post_path(@topic), class: 'right tiny radius button topic-button'
+      %hr
+      %p
+        = @topic.description
+      - @posts.each do |post|
+        %h4
+          = link_to post.title, post
+      %hr
+    .medium-2.columns
+      &nbsp;

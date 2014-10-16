@@ -1,2 +1,19 @@
-%h1 Topics#new
-%p Find me in app/views/topics/new.html.haml
+%section
+  .row
+    .columns.medium-3
+      &nbsp;
+    .columns.medium-6
+      %h1 New Topic
+      %hr
+      .panel
+        = form_for @topic do |f|
+          = f.label :name
+          = f.text_field :name, placeholder: "Enter topic name"
+          = f.label :description
+          = f.text_area :description, rows: 8, placeholder: "Enter topic description"
+          = f.label :public do
+            = f.check_box :public
+            Public topic
+          = f.submit "Save", class: 'button'
+    .columns.medium-3
+      &nbsp;

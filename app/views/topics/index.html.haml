@@ -5,7 +5,7 @@
     .medium-8.columns
       %h1.left Topics
       - if policy(Topic.new).create?
-        = link_to "New Topic", new_topic_path, class: 'new-topic-button right tiny button round alert'
+        = link_to "New Topic", new_topic_path, class: 'topic-button right tiny button round alert'
       %hr
       - @topics.each do |topic|
         %h2
