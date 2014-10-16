@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'haml-rails'
 
 gem 'foundation-rails'
+gem 'pry'
+gem 'quiet_assets'
 
 group :development do
   gem 'rails_layout'

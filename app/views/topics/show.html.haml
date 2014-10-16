@@ -1,20 +1,23 @@
 %section
   .row
-    .medium-2.columns
-      &nbsp;
     .medium-8.columns
-      %h1.left
-        = @topic.name
       - if policy(@topic).update?
-        = link_to "Edit Topic", edit_topic_path, class: 'left button round alert tiny topic-button'
-      -if policy(Post.new).create?
-        = link_to "New Post", new_post_path(@topic), class: 'right tiny radius button topic-button'
-      %hr
-      %p
+        = link_to "Edit Topic", edit_topic_path, class: 'right button round  tiny topic-button'
+      %h1
+        = @topic.name
+      %p.left
         = @topic.description
+      - if policy(Post.new).create?
+        = link_to "Make New Post", new_topic_post_path(@topic), class: 'left small radius alert button post-button'
+      %hr
       - @posts.each do |post|
         %h4
-          = link_to post.title, post
-      %hr
-    .medium-2.columns
-      &nbsp;
+          = link_to post.title, [@topic, post]
+        %small
+          submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
+          &nbsp;&nbsp;&nbsp;
+          = post.comments.count
+          Comments
+          %hr{:width => "60%"}/
+
+
