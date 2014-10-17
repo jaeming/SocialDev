@@ -5,10 +5,10 @@
         = link_to "Edit Topic", edit_topic_path, class: 'right button round  tiny topic-button'
       %h1
         = @topic.name
-      %p.left
+      %p
         = @topic.description
       - if policy(Post.new).create?
-        = link_to "Make New Post", new_topic_post_path(@topic), class: 'left small radius alert button post-button'
+        = link_to "Make New Post", new_topic_post_path(@topic), class: 'small radius alert button post-button'
       %hr
       - @posts.each do |post|
         %h4
