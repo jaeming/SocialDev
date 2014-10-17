@@ -3,7 +3,7 @@
   .row
     .large-9.columns
       .panel
-        = form_for @post do |f|
+        = form_for [@topic, @post] do |f|
           .row
             .large-11.columns
               = f.label :title

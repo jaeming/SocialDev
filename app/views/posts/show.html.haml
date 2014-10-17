@@ -9,6 +9,6 @@
       %p= @post.body
       %hr/
       - if policy(@post).edit?
-        = link_to "Edit", edit_post_path(@post), class: 'button tiny alert'
+        = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'
     .medium-2.columns
       &nbsp;
