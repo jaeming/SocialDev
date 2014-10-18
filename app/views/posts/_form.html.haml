@@ -1,0 +1,19 @@
+= form_for [topic, post] do |f|
+  - if post.errors.any?
+    .alert-box.alert.radius
+      %h5.white
+        There are #{pluralize(post.errors.count, "error")}
+      %ul.white
+        - post.errors.full_messages.each do |msg|
+          %li
+            = msg
+  .panel
+    .row
+      .large-11.columns
+        = form_group_tag(post.errors[:title]) do
+          = f.label :title
+          = f.text_field :title, placeholder: "Enter post title"
+        = form_group_tag(post.errors[:body]) do
+          = f.label :body
+          = f.text_area :body, rows: '15', placeholder: "Enter post body"
+        = f.submit "Save", class: 'button radius'

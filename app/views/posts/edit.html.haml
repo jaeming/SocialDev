@@ -2,16 +2,9 @@
   %h1 Edit Post
   .row
     .large-9.columns
-      .panel
-        = form_for [@topic, @post] do |f|
-          .row
-            .large-11.columns
-              = f.label :title
-              = f.text_field :title, placeholder: "Enter post title"
-              = f.label :body
-              = f.text_area :body, rows: '15', placeholder: "Enter post body"
-              = f.submit "Save", class: 'button radius'
+      = render partial: 'form', locals: { topic: @topic, post: @post }
     .large-3.columns
-      .panel.callout.radius
-        %h5.panel-text Keep it simple...
-        %p Try not to make drastic edits. It'll just confuse people.
+      %hr
+      %h4 Keep it simple...
+      %p.light Try not to make drastic edits. It'll just confuse people.
+      %hr

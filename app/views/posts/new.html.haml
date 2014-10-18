@@ -2,16 +2,9 @@
   %h1 New Post
   .row
     .large-9.columns
-      .panel
-        = form_for [@topic, @post] do |f|
-          .row
-            .large-11.columns
-              = f.label :title
-              = f.text_field :title
-              = f.label :body
-              = f.text_area :body, rows: '15'
-              = f.submit "Save", class: 'button radius'
+      = render partial: 'form', locals: { topic: @topic, post: @post }
     .large-3.columns
-      .panel.callout.radius
-        %h5.panel-text JUST A REMINDER...
-        %p Be nice, respect others, keep it clean, and stay cool!
+      %hr
+      %h4.panel-text Remember...
+      %p.light Be nice, respect others, and stay classical!
+      %hr
