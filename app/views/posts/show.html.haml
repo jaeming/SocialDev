@@ -5,8 +5,9 @@
     .medium-8.columns
       %h1
         = @post.title
+        -# = markdown @post.title
       %hr/
-      %p= @post.body
+      ~ markdown @post.body
       %hr/
       - if policy(@post).edit?
         = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'

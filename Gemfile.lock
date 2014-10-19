@@ -109,6 +109,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.2.0)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     sass (3.2.19)
@@ -165,6 +166,7 @@ DEPENDENCIES
   rails (= 4.0.10)
   rails_12factor
   rails_layout
+  redcarpet
   sass-rails (~> 4.0.2)
   sdoc
   simple_form

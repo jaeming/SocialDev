@@ -12,6 +12,7 @@
       %hr
       - @posts.each do |post|
         %h4
+          -# = link_to (markdown post.title), [@topic, post]
           = link_to post.title, [@topic, post]
         %small
           submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
