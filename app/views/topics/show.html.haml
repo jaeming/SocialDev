@@ -6,7 +6,7 @@
       %h1
         = @topic.name
       %p
-        = markdown @topic.description
+        -# = markdown @topic.description
       - if policy(Post.new).create?
         = link_to "Make New Post", new_topic_post_path(@topic), class: 'small radius alert button post-button'
       %hr

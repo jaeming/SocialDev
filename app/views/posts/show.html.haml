@@ -7,7 +7,7 @@
         = @post.title
         -# = markdown @post.title
       %hr/
-      ~ markdown @post.body
+      = sanitize @post.markdown_body
       %hr/
       - if policy(@post).edit?
         = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'
