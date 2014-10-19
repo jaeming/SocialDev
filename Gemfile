@@ -70,6 +70,6 @@ gem 'figaro', '1.0'
 
 gem 'pundit'
 
-gem 'redcarpet'
+gem 'kramdown'
 
 gem 'simple_form'

@@ -68,6 +68,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kramdown (1.4.2)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -109,7 +110,6 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    redcarpet (3.2.0)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     sass (3.2.19)
@@ -159,6 +159,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  kramdown
   pg
   pry
   pundit
@@ -166,7 +167,6 @@ DEPENDENCIES
   rails (= 4.0.10)
   rails_12factor
   rails_layout
-  redcarpet
   sass-rails (~> 4.0.2)
   sdoc
   simple_form
