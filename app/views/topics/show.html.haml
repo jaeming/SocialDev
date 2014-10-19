@@ -6,12 +6,13 @@
       %h1
         = @topic.name
       %p
-        = @topic.description
+        = markdown @topic.description
       - if policy(Post.new).create?
         = link_to "Make New Post", new_topic_post_path(@topic), class: 'small radius alert button post-button'
       %hr
       - @posts.each do |post|
         %h4
+          -# = link_to (markdown post.title), [@topic, post]
           = link_to post.title, [@topic, post]
         %small
           submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}

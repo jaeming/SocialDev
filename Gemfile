@@ -5,7 +5,6 @@ gem 'haml-rails'
 gem 'foundation-rails'
 gem 'pry'
 gem 'quiet_assets'
-gem 'simple_form'
 
 group :development do
   gem 'rails_layout'
@@ -70,3 +69,7 @@ gem 'devise'
 gem 'figaro', '1.0'
 
 gem 'pundit'
+
+gem 'kramdown'
+
+gem 'simple_form'
