@@ -1,7 +1,7 @@
 .panel
   .row
     .large-11.columns.box
-      = simple_form_for [topic, post] do |f|
+      = simple_form_for [topic, post], html: {class: "optional"} do |f|
         = f.label :title, required: false
         = f.full_error :title , class: "red"
         = f.text_field :title
@@ -13,15 +13,15 @@
           = image_tag( post.image.thumb.url )
         - else
           %small.light-small Upload image:
-        = f.file_field :image, class: "input-file", id: "input_file"
-        <button class='input-btn' id='input_btn'>Browse</button>
+        = f.file_field :image, class: "input-file", id: "browse"
+        -# <button type="button" class='input-btn' id='input_btn'>Browse</button>
         = f.hidden_field :image_cache
         %br
         = f.button :submit, class: "radius post-button"
-:javascript
-  $(function() {
-  document.getElementById("input_btn")
-  .addEventListener('click',function(){
-  document.getElementById("input_file").click();
-  },false);
-  });
+-# :javascript
+-#   $(function() {
+-#   document.getElementById("input_btn")
+-#   .addEventListener('click',function(){
+-#   document.getElementById("browse").click();
+-#   },false);
+-#   });
