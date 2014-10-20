@@ -2,8 +2,8 @@
 %html
   %head
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Bloccit"
-    %meta{:content => content_for?(:description) ? yield(:description) : "Bloccit", :name => "description"}/
+    %title= content_for?(:title) ? yield(:title) : "Codeca"
+    %meta{:content => content_for?(:description) ? yield(:description) : "Codeca", :name => "description"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     %link{:href => "//fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto+Slab:400,700,300", :rel => "stylesheet", :type => "text/css"}/
     = javascript_include_tag 'vendor/modernizr'
@@ -15,6 +15,7 @@
       %section
         .user-info.right
           - if current_user
+            = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
             = link_to (current_user.name || current_user.email), edit_user_registration_path
             \/ #{link_to "Sign out", destroy_user_session_path, method: :delete}
           - else

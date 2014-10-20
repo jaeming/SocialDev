@@ -6,6 +6,8 @@
       %h1
         = @post.title
         -# = markdown @post.title
+      %small.post-avatar
+        = image_tag(@post.user.avatar.tiny.url) if @post.user.avatar?
       %hr/
       = sanitize @post.markdown_body
       %hr/

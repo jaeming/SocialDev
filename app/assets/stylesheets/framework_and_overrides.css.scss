@@ -92,6 +92,7 @@ section {
     font-family: 'Open Sans', sans-serif;
     font-size: .8rem;
     padding-right: 13px;
+    margin-top: 3px;
  }
 
  .user-info a{
@@ -139,6 +140,8 @@ label {
   font-size: .7rem;
 }
 
+// CODEBLOCKS
+
 code, samp, kbd {
   font-family: "Courier New", Courier, monospace, sans-serif;
   text-align: left;
@@ -172,12 +175,30 @@ pre {
   overflow-x: auto;
   }
 
-  .line-numbers {
-    padding-right: 12px;
-  }
+.line-numbers {
+  padding-right: 12px;
+}
 
 
+// AVATAR
 
+.user-info img {
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+
+.post-avatar img {
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-bottom: 11px;
+}
+
+.topic-avatar img {
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
 
 
 
