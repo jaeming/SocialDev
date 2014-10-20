@@ -6,20 +6,21 @@
       %h1
         = @topic.name
       %p
-        -# = markdown @topic.description
+        = @topic.description
       - if policy(Post.new).create?
         = link_to "Make New Post", new_topic_post_path(@topic), class: 'small radius alert button post-button'
       %hr
-      - @posts.each do |post|
-        %h4
-          -# = link_to (markdown post.title), [@topic, post]
-          = link_to post.title, [@topic, post]
-        %small.topic-avatar
-          = image_tag(post.user.avatar.tiny.url) if post.user.avatar?
-          submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
-          &nbsp;&nbsp;&nbsp;
-          = post.comments.count
-          Comments
-          %hr{:width => "60%"}/
+      .post-shows
+        - @posts.each do |post|
+          %h4
+            = link_to post.title, [@topic, post]
+            = image_tag( post.image.thumb.url )
+          %small.topic-avatar
+            = image_tag(post.user.avatar.tiny.url) if post.user.avatar?
+            submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
+            &nbsp;&nbsp;&nbsp;
+            = post.comments.count
+            Comments
+            %hr{:width => "60%"}/
 
 

@@ -118,12 +118,19 @@ section {
 }
 
 .post-button {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .light {
   color: #7B7B7B;
   font-size: .8rem;
+}
+
+.light-small {
+  color: #7B7B7B;
+  font-size: .7rem;
+  padding: 0;
+  margin: 0;
 }
 
 .white {
@@ -201,6 +208,34 @@ pre {
 }
 
 // File Upload Button
+.input-file{
+  display:none;
+}
+.input-btn{
+  background-color: #FFF;
+  font-size: .7rem;
+  font-family: 'Open Sans', sans-serif;
+  color: gray;
+  padding:5px;
+  border-radius:3px;
+  margin:0px;
+}
+.input-btn:hover{
+  background-color: tomato;
+}
+
+.box img {
+  border-radius: 3px;
+}
+
+.post-shows img {
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+
+
+
 
 
 

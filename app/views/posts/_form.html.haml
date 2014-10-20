@@ -1,6 +1,6 @@
 .panel
   .row
-    .large-11.columns
+    .large-11.columns.box
       = simple_form_for [topic, post] do |f|
         = f.label :title, required: false
         = f.full_error :title , class: "red"
@@ -12,7 +12,16 @@
           = f.label "Replace image:"
           = image_tag( post.image.thumb.url )
         - else
-          = f.label "Upload image:"
-        = f.file_field :image
+          %small.light-small Upload image:
+        = f.file_field :image, class: "input-file", id: "input_file"
+        <button class='input-btn' id='input_btn'>Browse</button>
         = f.hidden_field :image_cache
-        = f.button :submit, class: "radius"
+        %br
+        = f.button :submit, class: "radius post-button"
+:javascript
+  $(function() {
+  document.getElementById("input_btn")
+  .addEventListener('click',function(){
+  document.getElementById("input_file").click();
+  },false);
+  });
