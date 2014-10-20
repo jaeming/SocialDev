@@ -9,6 +9,7 @@
       %small.post-avatar
         = image_tag(@post.user.avatar.tiny.url) if @post.user.avatar?
       %hr/
+      = image_tag(@post.image.standard.url) if @post.image?
       = sanitize @post.markdown_body
       %hr/
       - if policy(@post).edit?

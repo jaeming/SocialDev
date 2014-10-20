@@ -8,4 +8,11 @@
         = f.label :body, required: false
         = f.full_error :body , class: "red"
         = f.text_area :body, rows: '15'
+        - if post.image?
+          = f.label "Replace image:"
+          = image_tag( post.image.thumb.url )
+        - else
+          = f.label "Upload image:"
+        = f.file_field :image
+        = f.hidden_field :image_cache
         = f.button :submit, class: "radius"
