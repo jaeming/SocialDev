@@ -1,0 +1,2 @@
+$('#topics').append('<%= escape_javascript render(@topics) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@topics) %>');

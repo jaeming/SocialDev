@@ -6,13 +6,9 @@
       %h1.left Topics
       - if policy(Topic.new).create?
         = link_to "New Topic", new_topic_path, class: 'topic-button right tiny button round alert'
-      %hr
-      - @topics.each do |topic|
-        %h2
-          = link_to topic.name, topic
-        %p
-          = topic.description
+      #topics
         %hr
+        = render @topics
       = will_paginate @topics
       %br
     .medium-2.columns
