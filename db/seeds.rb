@@ -13,7 +13,7 @@ end
 users = User.all
 
 # Create Topics
- 15.times do
+ 50.times do
    Topic.create!(
      name:         Faker::Lorem.sentence,
      description:  Faker::Lorem.paragraph
@@ -22,7 +22,7 @@ users = User.all
  topics = Topic.all
 
 # Create Posts
-50.times do
+2000.times do
  Post.create!(
    title:  Faker::Lorem.sentence,
    body:   Faker::Lorem.paragraph,

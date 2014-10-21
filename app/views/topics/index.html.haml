@@ -11,7 +11,9 @@
         %h2
           = link_to topic.name, topic
         %p
-          -# = markdown topic.description
+          = topic.description
         %hr
+      = will_paginate @topics
+      %br
     .medium-2.columns
       &nbsp;
