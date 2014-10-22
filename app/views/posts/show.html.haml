@@ -5,14 +5,18 @@
     .medium-8.columns
       %h1
         = @post.title
-        -# = markdown @post.title
       %small.post-avatar
         = image_tag(@post.user.avatar.tiny.url) if @post.user.avatar?
       %hr/
       = image_tag(@post.image.standard.url) if @post.image?
-      = sanitize @post.markdown_body
+      ~ markdown @post.body
       %hr/
       - if policy(@post).edit?
         = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'
+      = render partial: 'comments/form', locals: { topic: @topic, post: @post }
+      %h4 Discussion
+      %hr
+      = render @comments
+      %hr
     .medium-2.columns
       &nbsp;

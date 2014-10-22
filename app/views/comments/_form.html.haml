@@ -1,0 +1,6 @@
+.panel
+  = simple_form_for [topic, post, post.comments.new], html: {class: "optional"} do |f|
+    = f.full_error :body , class: "red"
+    = f.text_area :body, rows: '10', placeholder: "Have your say..."
+    = f.button :submit, class: "radius post-button small"
+%br

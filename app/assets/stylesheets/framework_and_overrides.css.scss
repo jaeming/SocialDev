@@ -84,7 +84,8 @@ section {
     // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
     $adjust:false
   );
-  color: #474747;
+    color: #474747;
+
 }
 
 
@@ -232,6 +233,17 @@ pre {
   border-radius: 3px;
   margin-left: 5px;
 }
+
+// Comments
+
+.comments {
+  background: whitesmoke;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: .9rem;
+
+}
+
 
 
 
