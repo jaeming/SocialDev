@@ -13,10 +13,10 @@
       %hr/
       - if policy(@post).edit?
         = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'
-      = render partial: 'comments/form', locals: { topic: @topic, post: @post }
-      %h4 Discussion
-      %hr
+      - if policy(Post.new).create?
+        = render partial: 'comments/form', locals: { topic: @topic, post: @post }
+      %br
+      %h4 COMMENTS
       = render @comments
-      %hr
     .medium-2.columns
       &nbsp;
