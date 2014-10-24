@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+
 gem 'haml-rails'
 
 gem 'foundation-rails'
@@ -82,4 +84,8 @@ gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
 
-gem 'scrollinity'
+gem 'unicorn'
+
+
+
+

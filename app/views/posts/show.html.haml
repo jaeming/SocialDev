@@ -16,7 +16,8 @@
       - if policy(Post.new).create?
         = render partial: 'comments/form', locals: { topic: @topic, post: @post }
       %br
-      %h4 COMMENTS
-      = render @comments
+      - if @comments.any?
+        %h4 COMMENTS
+        = render @comments
     .medium-2.columns
       &nbsp;
