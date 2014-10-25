@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.build(comment_params.merge(post: @post))
     @topic = @post.topic
-    # @comment.post_id = @post.id
     if @comment.save
       flash[:notice] = "Comment was saved."
       redirect_to [@post.topic, @post]
@@ -14,6 +13,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    # @topic = @post.topic
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    authorize @comment
+
+    if @comment.destroy
+      flash[:notice] = "Comment was removed."
+      redirect_to [@post.topic, @post]
+    else
+      flash[:error] = "Comment Couldn't be deleted. Try again."
+      redirect_to [@post.topic, @post]
+    end
+  end
 
   private
 

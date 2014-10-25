@@ -1,4 +1,4 @@
-class PostPolicy < ApplicationPolicy
+class CommentPolicy < ApplicationPolicy
 
   def index?
     true
@@ -6,6 +6,10 @@ class PostPolicy < ApplicationPolicy
 
   def create?
     user.present?
+  end
+
+  def destroy?
+    can_moderate?
   end
 
 end

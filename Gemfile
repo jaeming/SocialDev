@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-
-
-gem 'haml-rails'
-
-gem 'foundation-rails'
 gem 'pry'
 gem 'quiet_assets'
+
 
 group :development do
   gem 'rails_layout'
@@ -85,6 +81,10 @@ gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
 
 gem 'unicorn'
+
+gem 'haml-rails'
+
+gem 'foundation-rails'
 
 
 
