@@ -14,10 +14,15 @@
       - if policy(@post).edit?
         = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny alert'
       - if policy(Post.new).create?
-        = render partial: 'comments/form', locals: { topic: @topic, post: @post }
+        - @comment ||= Comment.new
+        = render partial: 'comments/form', locals: { post: @post, comment: @comment }
       %br
-      - if @comments.any?
-        %h4 COMMENTS
-        = render @comments
+      - if @post.comments.any?
+        %h5 COMMENTS
+        = render @post.comments
+      - else
+        %p
+          No comments yet.
+      %br
     .medium-2.columns
       &nbsp;
