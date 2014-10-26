@@ -4,6 +4,10 @@ gem 'pry'
 gem 'quiet_assets'
 
 
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 group :development do
   gem 'rails_layout'
 end
