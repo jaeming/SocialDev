@@ -4,7 +4,7 @@ describe Post do
   describe "vote methods" do
 
     before do
-      @post = Post.create(title: 'post title', body: 'post body')
+      @post = Post.create(title: 'post title', body: 'post body must be over 20 characters long so....yeah....')
       3.times { @post.votes.create(value: 1) }
       2.times { @post.votes.create(value: -1) }
     end
