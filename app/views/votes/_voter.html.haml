@@ -1,8 +1,9 @@
-%div.vote-arrows
-  %div.icon-a
-    = link_to " ", '#', class: 'fa fa-chevron-up'
-  %div.count-a
-    %strong.light.mid
-      = post.points
-  %div.icon-a
-    = link_to " ", "#", class: 'fa fa-chevron-down'
+- if policy(Vote.new).create?
+  %div.vote-arrows
+    %div.icon-a
+      = link_to " ", post_up_vote_path(post), class: 'fa fa-chevron-up', method: :post
+    %div.count-a
+      %strong.light.mid
+        = post.points
+    %div.icon-a
+      = link_to " ", post_down_vote_path(post), class: 'fa fa-chevron-down', method: :post
