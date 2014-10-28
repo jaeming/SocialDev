@@ -5,22 +5,26 @@
 .single-post h1 {
   font-size: 24px;
   color: #606060;
+  padding-top: 0;
+  display: inline-block;
 }
 
 .single-post p {
   color: #606060;
 }
 
-.single-post h1 {
-  display: inline-block;
-  padding-top: 35px;
-}
+
 
 p.user-comment {
   font-size: .8rem;
   color: #8F7777;
   font-family: 'Roboto Slab', serif;
   margin-top: 5px;
+}
+
+h4 {
+  font-size: 1.3rem;
+  margin: 0;
 }
 
 

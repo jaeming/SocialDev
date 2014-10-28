@@ -129,7 +129,6 @@ section {
 
 .light-header {
   color: #7B7B7B;
-
 }
 
 .light-small {
@@ -203,11 +202,14 @@ pre {
 
 .post-avatar img {
   border-radius: 50%;
-  margin-left: 5px;
-  margin-bottom: 11px;
+  margin-left: 7px;
+  margin-top: -6px;
+
 }
 
-.topic-avatar img {
+
+
+small.topic-avatar img {
   border-radius: 50%;
   margin-right: 5px;
   margin-bottom: 3px;
@@ -241,7 +243,7 @@ pre {
   border-radius: 3px;
 }
 
-.post-shows img {
+.post-group-cont img {
   border-radius: 3px;
   margin-left: 5px;
 }
@@ -278,23 +280,76 @@ pre {
   font-size: .9rem;
 }
 
-// VOTING
+// Post-show layout
 
 .mid {
-  margin-left: 3px;
+  margin-left: 4px;
 }
 
 .vote-arrows {
-  margin-top: 19px;
-  padding-right: 10px;
-
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
   border-right: 11px solid #F5F5F5;
+  padding-right: 10px;
 
 }
 
 .post-marign {
+  margin-left: 20px;
+}
+
+small.votes {
+  color: #7B7B7B;
+  margin-top: -10px;
+}
+
+.vote-count-header {
+  margin-bottom: 0;
+  margin-top: -10px;
+}
+
+.comment-form {
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.post-title-cont {
+  position: relative;
+  margin-top: 5px;
+
+}
+
+.post-title-margin {
   margin-left: 50px;
 }
+
+.votes-margin {
+  width: 20px !important;
+}
+
+.post-hr hr {
+  margin-top: 10px;
+}
+
+.count-a {
+  line-height: .5;
+}
+
+.vote-cont {
+  position: relative;
+}
+
+.post-group-cont {
+  margin-left: 55px;
+}
+
+.post-by-cont {
+  margin-left: 50px;
+}
+
+
+
 
 
 

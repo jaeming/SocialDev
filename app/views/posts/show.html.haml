@@ -2,31 +2,42 @@
   .row
     .medium-2.columns
       &nbsp;
-    .medium-8.columns
-      = render partial: 'votes/voter', locals: { post: @post }
-      .post-marign
-        %h1
-          = @post.title
-        %small.post-avatar
-          = image_tag(@post.user.avatar.tiny.url) if @post.user.avatar?
-        %hr/
-        = image_tag(@post.image.standard.url) if @post.image?
-        ~ markdown @post.body
-        %hr/
+    .medium-8.columns.post-hr
+      .post-title-cont
+        = render partial: 'votes/voter', locals: { post: @post }
+        .post-title-margin
+          %h1
+            = @post.title
+            %small.post-avatar
+              = image_tag(@post.user.avatar.tiny.url) if @post.user.avatar?
+      %hr/
+      = image_tag(@post.image.standard.url) if @post.image?
+      ~ markdown @post.body
+      %hr/
+      .medium-8.columns
         - if policy(@post).edit?
-          = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'button tiny'
+          = link_to "Edit Post", edit_topic_post_path(@topic, @post), class: 'button tiny'
         - if policy(@post).destroy?
-          = link_to "Delete Post", [@topic, @post], method: :delete, class: 'button tiny alert right', data: { confirm: 'Are you sure you want to delete this post?'}
-        - if policy(Post.new).create?
+          = link_to "Delete Post", [@topic, @post], method: :delete, class: 'button tiny alert', data: { confirm: 'Are you sure you want to delete this post?'}
+        &nbsp;
+      .medium-4.columns
+        %h6.vote-count-header.light.right
+          = pluralize(@post.points, 'point')
+        %br
+        %small.votes.right
+          = pluralize(@post.up_votes, 'up vote')
+          = pluralize(@post.down_votes, 'down vote')
+      - if policy(Post.new).create?
+        .comment-form
           - @comment ||= Comment.new
           = render partial: 'comments/form', locals: { post: @post, comment: @comment }
-      %br
+        %br
       - if @post.comments.any?
         %h5.light-header COMMENTS
         = render @post.comments, :post => @post
       - else
-        %p
-          No comments yet.
+      %p
+        No comments yet.
       %br
     .medium-2.columns
       &nbsp;

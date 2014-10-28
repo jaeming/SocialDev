@@ -1,11 +1,14 @@
-.post-shows
-  %h4
-    = link_to post.title, [@topic, post]
-    = image_tag( post.image.thumb.url )
-  %small.topic-avatar
-    = image_tag(post.user.avatar.tiny.url) if post.user.avatar?
-    submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
-    &nbsp;&nbsp;&nbsp;
-    = post.comments.count
-    Comments
-    %hr{:width => "60%"}/
+.vote-cont
+  = render partial: 'votes/voter', locals: { post: post }
+  .post-group-cont
+    %h4
+      = link_to post.title, [@topic, post]
+      = image_tag( post.image.thumb.url )
+    %small.topic-avatar
+      = image_tag(post.user.avatar.tiny.url) if post.user.avatar?
+      submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
+      &nbsp;&nbsp;&nbsp;
+      = post.comments.count
+      Comments
+  .post-by-cont
+%hr{:width => "60%"}/

@@ -1,6 +1,8 @@
 %section
   .row
-    .medium-8.columns
+    .medium-1.columns
+      &nbsp;
+    .medium-10.columns
       %h1
         = @topic.name
       %p
@@ -16,5 +18,7 @@
         = render @posts
       = will_paginate @posts
       %br
+    .medium-1.columns
+      &nbsp;
 
 
