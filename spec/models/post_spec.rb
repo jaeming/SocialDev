@@ -3,8 +3,10 @@ require 'rails_helper'
 describe Post do
   describe "vote methods" do
 
+    include TestFactories
+
     before do
-      @post = Post.create(title: 'post title', body: 'post body must be over 20 characters long so....yeah....')
+      @post = associated_post
       3.times { @post.votes.create(value: 1) }
       2.times { @post.votes.create(value: -1) }
     end
@@ -27,4 +29,22 @@ describe Post do
       end
     end
   end
+
+    describe '#create_vote' do
+      it "generates an upvote when explicitly called" do
+        post = associated_post
+        expect( post.up_votes ).to eq(0)
+        post.create_vote
+        expect( post.up_votes ).to eq(1)
+      end
+    end
 end
+
+
+
+
+
+
+
+
+
