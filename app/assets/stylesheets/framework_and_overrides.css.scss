@@ -283,7 +283,7 @@ small.topic-avatar img {
 // Post-show layout
 
 .mid {
-  margin-left: 4px;
+  text-align: center;
 }
 
 .vote-arrows {
@@ -292,6 +292,7 @@ small.topic-avatar img {
   transform: translateY(-55%);
   border-right: 11px solid #F5F5F5;
   padding-right: 10px;
+  text-align: center;
 
 }
 
@@ -334,6 +335,7 @@ small.votes {
 
 .count-a {
   line-height: .5;
+  text-align: center;
 }
 
 .vote-cont {
@@ -347,6 +349,7 @@ small.votes {
 .post-by-cont {
   margin-left: 50px;
 }
+
 
 
 
