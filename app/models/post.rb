@@ -34,9 +34,11 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
 
 
-  def create_vote
-    user.votes.create(value: 1, post: self)
+  def save_with_initial_vote
+    ActiveRecord::Base.transaction do
+      self.save
+      user.votes.create(value: 1, post: self)
+    end
   end
-
 
 end
