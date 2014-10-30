@@ -350,6 +350,22 @@ small.votes {
   margin-left: 50px;
 }
 
+// Favorites
+.favorites a {
+color: #008CBA;
+transition: all 500ms ease;
+}
+
+.favorites a:hover {
+  color: tomato;
+}
+
+
+
+
+
+
+
 
 
 

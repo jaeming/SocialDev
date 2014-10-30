@@ -6,6 +6,7 @@
       .post-title-cont
         = render partial: 'votes/voter', locals: { post: @post }
         .post-title-margin
+          = render partial: 'favorites/favorite', locals: { post: @post }
           %h1
             = @post.title
             %small.post-avatar
@@ -36,8 +37,8 @@
         %h5.light-header COMMENTS
         = render @post.comments, :post => @post
       - else
-      %p
-        No comments yet.
+        %p
+          No comments yet.
       %br
     .medium-2.columns
       &nbsp;

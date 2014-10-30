@@ -2,8 +2,9 @@
   - if policy(comment).destroy?
     .small.right.delete
       =link_to "Delete", [post, comment], method: :delete
-  = link_to '#', class: 'left comment-avatar' do
-    = image_tag(comment.user.avatar.small.url) if comment.user.avatar?
+  = content_tag :div, class: '', id: "comment-#{comment.id}" do
+    = link_to '#', class: 'left comment-avatar' do
+      = image_tag(comment.user.avatar.small.url) if comment.user.avatar?
   %p.user-comment
     = comment.user.name
     , &nbsp;
