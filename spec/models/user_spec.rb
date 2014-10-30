@@ -7,6 +7,7 @@ describe User do
     before do
       @post = associated_post
       @user = authenticated_user
+
     end
 
     it "returns 'nil' if the user has not favorited the post" do
@@ -14,7 +15,7 @@ describe User do
     end
 
     it "returns the appropriate favorite if it exists" do
-      expect( @user.favorited(@post) ).to eq(true)
+      expect( @user.favorited(@post) )
     end
   end
 end
