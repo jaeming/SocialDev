@@ -15,7 +15,7 @@ describe User do
     end
 
     it "returns the appropriate favorite if it exists" do
-      expect( @user.favorited(@post) )
+      expect( @user.favorited(@post) ).to_not be_nil
     end
   end
 end
