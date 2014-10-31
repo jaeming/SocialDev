@@ -1,9 +1,18 @@
 - if policy(Vote.new).create?
   %div.vote-arrows
     %div.icon-a
-      = link_to " ", post_up_vote_path(post), class: 'fa fa-chevron-up', method: :post
+      = link_to " ", post_up_vote_path(post), class: "fa fa-chevron-up #{(current_user.voted(post) && current_user.voted(post).up_vote?) ? 'voted' : '' }", method: :post
     %div.count-a
       %strong.light.mid
         = post.points
     %div.icon-a
-      = link_to " ", post_down_vote_path(post), class: 'fa fa-chevron-down', method: :post
+      = link_to " ", post_down_vote_path(post), class: "fa fa-chevron-down #{(current_user.voted(post) && current_user.voted(post).down_vote?) ? 'voted' : '' }", method: :post
+- else
+  %div.vote-arrows
+    %div.icon-a
+      = link_to " ", new_user_session_path, class: 'fa fa-chevron-up'
+    %div.count-a
+      %strong.light.mid
+        = post.points
+    %div.icon-a
+      = link_to " ", new_user_session_path, class: 'fa fa-chevron-down'

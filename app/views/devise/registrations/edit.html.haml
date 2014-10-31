@@ -2,42 +2,48 @@
   .row
     .medium-3.columns
       &nbsp;
-    .medium-6.columns.panel
-      %h1
-        Edit #{resource_name.to_s.humanize}
-      %hr
-      %div
-        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-          = devise_error_messages!
-          = f.label :email
-          = f.email_field :email, autofocus: true
-          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    .medium-6.columns
+      .panel
+        %h1
+          Edit #{resource_name.to_s.humanize}
+        %hr
+        %div
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = devise_error_messages!
+            = f.label :email
+            = f.email_field :email, autofocus: true
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              %div
+                Currently waiting confirmation for: #{resource.unconfirmed_email}
             %div
-              Currently waiting confirmation for: #{resource.unconfirmed_email}
-          %div
-            = f.label :password, class: 'left'
-            %label.left &nbsp;&nbsp;&nbsp;(leave blank if you don't want to change it)
-            = f.password_field :password, autocomplete: "off"
-          %div
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "off"
-          %div
-            = f.label :current_password, class: 'left'
-            %label.left &nbsp;&nbsp;&nbsp;(we need your current password to confirm your changes)
-            = f.password_field :current_password, autocomplete: "off"
-          %div= f.submit "Update", class: 'small button radius'
-      %hr
-      %h4 Edit personal details
-      = form_for(current_user) do |f|
-        = f.label :name
-        = f.text_field :name, placeholder: "Enter Name"
-        - if current_user.avatar?
-          %p Current Avatar
-          = image_tag( current_user.avatar.profile.url )
-        = f.label :avatar
-        = f.file_field :avatar
-        = f.hidden_field :avatar_cache
-        = f.submit "Update", class: 'radius small button'
+              = f.label :password, class: 'left'
+              %label.left &nbsp;&nbsp;&nbsp;(leave blank if you don't want to change it)
+              = f.password_field :password, autocomplete: "off"
+            %div
+              = f.label :password_confirmation
+              = f.password_field :password_confirmation, autocomplete: "off"
+            %div
+              = f.label :current_password, class: 'left'
+              %label.left &nbsp;&nbsp;&nbsp;(we need your current password to confirm your changes)
+              = f.password_field :current_password, autocomplete: "off"
+            %div= f.submit "Update", class: 'small button radius'
+      .panel
+        %h4 Edit personal details
+        = form_for(current_user) do |f|
+          = f.label :name
+          = f.text_field :name, placeholder: "Enter Name"
+          - if current_user.avatar?
+            %hr
+            = f.label "Current Avatar:"
+            = image_tag( current_user.avatar.profile.url )
+          = f.file_field :avatar
+          = f.hidden_field :avatar_cache
+          %hr
+          = f.label "Email notification:"
+          = f.check_box :email_favorites
+          %small receive email updates for favorited post?
+          %hr
+          = f.submit "Update", class: 'radius small button'
       %hr
       %p Unhappy for any reason? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'button round tiny alert'}
       //= link_to "Back", :back
