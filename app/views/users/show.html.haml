@@ -1,0 +1,23 @@
+.row
+  .columns.medium-8
+    %h1
+      = @user.name
+    %dl.tabs{"data-tab" => ""}
+      %dd.active
+        %a{:href => "#panel1"} Posts
+      %dd
+        %a{:href => "#panel2"} Comments
+    .tabs-content
+      #panel1.content.active
+        = render @posts
+      #panel2.content
+        = render partial: 'comments/comment', collection: @user.comments
+        -# - @comments.each do |comment|
+        -#   = link_to comment.body
+        -#   %hr
+
+  -# - @posts.each do |post|
+  -#   = link_to post.title, [@topic, post]
+  -#   %br
+  -# %h2
+  -#   Comments

@@ -35,7 +35,7 @@
         %br
       - if @post.comments.any?
         %h5.light-header COMMENTS
-        = render @post.comments, :post => @post
+        = render partial: 'comments/comment', collection: @post.comments
       - else
         %p
           No comments yet.

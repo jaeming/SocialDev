@@ -360,6 +360,16 @@ transition: all 500ms ease;
   color: tomato;
 }
 
+// User Profile
+
+.tabs dd.active a, .tabs .tab-title.active a {
+background-color: tomato;
+color: #fff;
+}
+
+.tabs {
+  border-bottom: solid 5px whitesmoke
+}
 
 
 

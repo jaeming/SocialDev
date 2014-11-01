@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   mount_uploader :image, ImageUploader
 
+  validates :title, length: { minimum: 5 }, presence: true
+  validates :body, length: { minimum: 20 }, presence: true
+  validates :topic, presence: true
+  validates :user, presence: true
+
   def up_votes
     votes.where(value: 1).count
   end
@@ -28,17 +33,13 @@ class Post < ActiveRecord::Base
 
   default_scope { order('rank DESC') }
 
-  validates :title, length: { minimum: 5 }, presence: true
-  validates :body, length: { minimum: 20 }, presence: true
-  validates :topic, presence: true
-  validates :user, presence: true
 
 
-  def save_with_initial_vote
-    ActiveRecord::Base.transaction do
-      self.save
-      user.votes.create(value: 1, post: self)
-    end
-  end
+  # def save_with_initial_vote
+  #   ActiveRecord::Base.transaction do
+  #     self.save
+  #     user.votes.create(value: 1, post: self)
+  #   end
+  # end
 
 end

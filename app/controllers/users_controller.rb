@@ -1,5 +1,12 @@
- class UsersController < ApplicationController
-   before_action :authenticate_user!
+class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
+
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    @comments = @user.comments
+    @topic = Topic.find(params[:id])
+  end
 
    def update
      if current_user.update_attributes(user_params)
