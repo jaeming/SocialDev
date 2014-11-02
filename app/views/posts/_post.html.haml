@@ -2,7 +2,7 @@
   = render partial: 'votes/voter', locals: { post: post }
   .post-group-cont
     %h4
-      = link_to post.title, [@topic, post]
+      = link_to post.title, [post.topic, post]
       = image_tag( post.image.thumb.url )
     %small.topic-avatar
       = image_tag(post.user.avatar.tiny.url) if post.user.avatar?

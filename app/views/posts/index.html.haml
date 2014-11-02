@@ -1,0 +1,9 @@
+.row
+  .columns.medium-centered
+    %h1 Popular
+    %p
+      Active posts this week
+    %hr
+    #posts
+      = render @posts
+    = will_paginate @posts

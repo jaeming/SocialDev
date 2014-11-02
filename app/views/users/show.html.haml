@@ -14,15 +14,7 @@
         %a{:href => "#panel2"} Comments
     .tabs-content
       #panel1.content.active
-        = render @posts
+        = render partial: 'posts/post', collection: @posts
       #panel2.content
         = render partial: 'comments/comment', collection: @user.comments
-        -# - @comments.each do |comment|
-        -#   = link_to comment.body
-        -#   %hr
 
-  -# - @posts.each do |post|
-  -#   = link_to post.title, [@topic, post]
-  -#   %br
-  -# %h2
-  -#   Comments
