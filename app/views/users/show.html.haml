@@ -1,7 +1,12 @@
 .row
   .columns.medium-8
     %h1
+      %i.fa.fa-user
       = @user.name
+      -if current_user
+        %small
+          %i.fa.fa-cog
+          = link_to "edit profile", edit_user_registration_path
     %dl.tabs{"data-tab" => ""}
       %dd.active
         %a{:href => "#panel1"} Posts

@@ -13,11 +13,13 @@
     %header= render 'layouts/navigation'
     .custom-panel.clearfix
       %section
-        .user-info.right
+        .user-info.right{"data-no-turbolink" => ""}
           - if current_user
             = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
-            = link_to (current_user.name || current_user.email), edit_user_registration_path
-            \/ #{link_to "Sign out", destroy_user_session_path, method: :delete}
+            = link_to (current_user.name || current_user.email), current_user
+            |
+            %i.fa.fa-sign-out
+            = link_to "Sign out", destroy_user_session_path, method: :delete
           - else
             = link_to "Sign in", new_user_session_path
             \/

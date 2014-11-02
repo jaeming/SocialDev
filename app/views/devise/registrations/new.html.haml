@@ -7,15 +7,17 @@
       .medium-6.columns
         %h1 Sign up
         .panel
+          = f.label :name
+          = f.text_field :name, placeholder: "Choose a User Name"
           = f.label :email
-          = f.email_field :email, autofocus: true
+          = f.email_field :email, placeholder: "Your Email"
           = f.label :password, class: 'left'
           - if @validatable
             %label.left
               &nbsp;(#{@minimum_password_length} characters minimum)
-          = f.password_field :password, autocomplete: "off"
+          = f.password_field :password, autocomplete: "off", placeholder: "Choose a password"
           = f.label :password_confirmation
-          = f.password_field :password_confirmation, autocomplete: "off"
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password"
           = f.submit "Sign up", class: 'button radius'
         %hr
         .devise-linkage
