@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'pry'
+
 gem 'quiet_assets'
 
 
@@ -10,23 +10,25 @@ group :test do
 end
 
 group :development do
+  gem 'pry', '~> 0.9.7.4'
   gem 'rails_layout'
+  gem 'jazz_hands'
+  gem 'sqlite3'
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem 'did_you_mean'
 end
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.10'
 
 # Use sqlite3 as the database for Active Record
  group :production do
-   gem 'unicorn'
    gem 'pg'
    gem 'rails_12factor'
  end
 
- group :development do
-   gem 'unicorn'
-   gem 'sqlite3'
- end
+gem 'unicorn'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.10'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

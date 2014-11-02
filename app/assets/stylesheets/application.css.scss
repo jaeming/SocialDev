@@ -14,9 +14,19 @@
  *= require_self
  *= require font-awesome
  */
+
+a:active {
+outline: none !important;
+border: none !important;
+}
+
+a:focus {outline:0 !important;}
+
  .voted {
   opacity: 0.5;
  }
+
+
 
 
 
