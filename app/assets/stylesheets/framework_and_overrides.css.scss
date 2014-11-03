@@ -17,7 +17,7 @@
 
 .top-bar-section li:not(.has-form) a:not(.button) {
     background-color: #474747;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     transition: all 500ms ease }
 
 .top-bar .name {
@@ -360,8 +360,8 @@ transition: all 500ms ease;
   color: tomato;
 }
 
-// User Profile
-
+// USERS
+  //Profiles
 .tabs dd.active a, .tabs .tab-title.active a {
 background-color: tomato;
 color: #fff;
@@ -370,6 +370,20 @@ color: #fff;
 .tabs {
   border-bottom: solid 5px whitesmoke
 }
+
+//  User index
+.users img {
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: -1px;
+}
+
+.users h4 {
+line-height: 1;
+
+}
+
+
 
 
 

@@ -1,0 +1,9 @@
+.users
+  = link_to user, class: 'left' do
+    = image_tag(user.avatar.profile.url) if user.avatar?
+  %h4
+    = link_to user.name, user
+  %small
+    = pluralize(user.posts_count, 'post')
+    = pluralize(user.comments_count, 'comment')
+  %hr{:width => "50%"}/

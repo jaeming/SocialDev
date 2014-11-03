@@ -1,0 +1,9 @@
+.row
+  .columns.medium-8
+    %h1 Users
+    %p.light
+      Most active users
+    %hr
+    #users
+      = render partial: 'users/user', collection: @users
+    = will_paginate @users
