@@ -4,11 +4,9 @@ Warden.test_mode!
 
 describe "Visiting profiles" do
 
-  include TestFactories
-
   before do
-    @user = authenticated_user
-    @post = associated_post(user: @user)
+    @user = create(:user)
+    @post = create(:post, user: @user)
     @comment = Comment.new(user: @user, body: "A Comment")
     allow(@comment).to receive(:send_favorite_emails)
     @comment.save
@@ -28,7 +26,7 @@ describe "Visiting profiles" do
   describe "signed in" do
 
     before do
-      user = authenticated_user
+      user = create(:user)
       login_as(user, :scope => :user)
     end
 
