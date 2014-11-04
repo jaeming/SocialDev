@@ -1,0 +1,6 @@
+<% if @comment.destroyed? %>
+  $('#comment-' +<%= @comment.id %>).fadeOut();
+<% else %>
+  $('#comment-' +<%= @comment.id %>).prepend("<div class='alert-box radius'><%= flash[:error] = "Comment not be deleted. Try again." %></div>");
+
+<% end %>
