@@ -1,6 +1,9 @@
-.users
+.users{"data-no-turbolink" => ""}
   = link_to user, class: 'left' do
-    = image_tag(user.avatar.profile.url) if user.avatar?
+    - if user.avatar?
+      = image_tag(user.avatar.profile.url)
+    - else
+      %i.fa.fa-user.user-icon-alt
   %h4
     = link_to user.name, user
   %small

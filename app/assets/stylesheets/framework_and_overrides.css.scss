@@ -204,8 +204,13 @@ pre {
   border-radius: 50%;
   margin-left: 7px;
   margin-top: -6px;
-
 }
+
+.profile-avatar img {
+  border-radius: 50%;
+  margin-right: 2px;
+  margin-bottom: 5px;
+  }
 
 
 
@@ -379,10 +384,12 @@ color: #fff;
 }
 
 .users h4 {
-line-height: 1;
-
+  line-height: 1;
 }
 
+.user-icon-alt {
+  padding-right: 15px;
+}
 
 
 

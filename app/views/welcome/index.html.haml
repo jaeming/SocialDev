@@ -1,12 +1,17 @@
 %section
   %h1 Welcome to Codeca
   %h3
-    %small Codeca is a resource for sharing interesting code.
-  .clearfix
-    = link_to "Sign in", new_user_session_path, class: 'entry button alert radius left'
-    = link_to "Sign up", new_user_registration_path, class: 'entry button radius left'
+    %small Codeca is a resource for sharing anything related to code.
+  - unless current_user
+    .clearfix
+      = link_to "Sign in", new_user_session_path, class: 'entry button alert radius left'
+      = link_to "Sign up", new_user_registration_path, class: 'entry button radius left'
   %hr
-  %h2
+  = render @posts
+  .more{"data-no-turbolink" => ""}
+    = link_to 'View all popular posts', posts_path
+  %hr
+
 
 
 

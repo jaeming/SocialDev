@@ -1,8 +1,8 @@
 %section.single-post
   .row
-    .medium-2.columns
+    .medium-1.columns
       &nbsp;
-    .medium-8.columns.post-hr
+    .medium-10.columns.post-hr
       .post-title-cont
         = render partial: 'votes/voter', locals: { post: @post }
         .post-title-margin
@@ -28,17 +28,19 @@
         %small.votes.right
           = pluralize(@post.up_votes, 'up vote')
           = pluralize(@post.down_votes, 'down vote')
+      %br
+      %br
       - if policy(Post.new).create?
         .comment-form
           - @comment ||= Comment.new
           = render partial: 'comments/form', locals: { post: @post, comment: @comment }
         %br
-      - if @post.comments.any?
-        %h5.light-header COMMENTS
-        = render partial: 'comments/comment', collection: @post.comments
-      - else
-        %p
-          No comments yet.
+      .comment-section
+        - if @post.comments.any?
+          = render partial: 'comments/comment', collection: @post.comments
+        - else
+          %p.no-comments
+            No comments yet.
       %br
-    .medium-2.columns
+    .medium-1.columns
       &nbsp;

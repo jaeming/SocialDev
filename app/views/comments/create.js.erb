@@ -1,0 +1,8 @@
+<% if @comment.valid? %>
+  $('.comment-section').prepend("<%= escape_javascript(render(@comment)) %>");
+  $('.comment-form').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @new_comment }) %>");
+  $('.no-comments').fadeOut();
+<% else %>
+  $('.comment-form').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @comment }) %>");
+
+<% end %>

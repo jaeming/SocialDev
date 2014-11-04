@@ -1,7 +1,10 @@
 .row
-  .columns.medium-8
+  .columns.medium-8.profile-avatar
     %h1
-      %i.fa.fa-user
+      - if @user.avatar?
+        = image_tag(@user.avatar.profile.url)
+      - else
+        %i.fa.fa-user
       = @user.name
       -if current_user
         %small

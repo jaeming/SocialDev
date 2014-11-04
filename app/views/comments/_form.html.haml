@@ -1,6 +1,6 @@
-.panel
-  = simple_form_for [post, comment], html: {class: "optional"} do |f|
+.panel.commenting
+  = simple_form_for [post, comment], remote: true do |f|
     = f.full_error :body , class: "red"
-    = f.text_area :body, rows: '10', placeholder: "Have your say..."
-    = f.button :submit, class: "radius post-button small"
+    = f.text_area :body, rows: '6', placeholder: "Have your say..."
+    = f.button :submit, class: "radius post-button tiny"
 %br

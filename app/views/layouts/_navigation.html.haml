@@ -4,5 +4,5 @@
       %li.name= link_to 'Codeca', root_path
       %li.toggle-topbar.menu-icon
         %a{:href => "#"} Menu
-    .top-bar-section.right
+    .top-bar-section.right{"data-no-turbolink" => ""}
       %ul= render 'layouts/navigation_links'
