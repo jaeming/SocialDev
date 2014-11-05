@@ -12,6 +12,7 @@ class Vote < ActiveRecord::Base
   def down_vote?
     value == -1
   end
+
   private
 
   def update_post

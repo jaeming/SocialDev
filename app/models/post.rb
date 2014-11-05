@@ -24,15 +24,19 @@ class Post < ActiveRecord::Base
     votes.sum(:value)
   end
 
- def update_rank
-   age = (created_at - Time.new(1970,1,1)) / (60 * 60 * 24) # 1 day in seconds
-   new_rank = points + age
+  def update_rank
+    age = (created_at - Time.new(1970,1,1)) / (60 * 60 * 24) # 1 day in seconds
+    new_rank = points + age
 
-   update_attribute(:rank, new_rank)
- end
+    update_attribute(:rank, new_rank)
+  end
 
   default_scope { order('rank DESC') }
   scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
+
+  after_create :create_vote
+
+  private
 
   def create_vote
     user.votes.create(value: 1, post: self)
