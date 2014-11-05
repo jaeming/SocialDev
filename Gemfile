@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'quiet_assets'
 
+gem 'newrelic_rpm'
 
 group :test do
   gem 'rspec-rails', '~> 3.1.0'
