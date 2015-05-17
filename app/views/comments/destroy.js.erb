@@ -1,6 +1,8 @@
 <% if @comment.destroyed? %>
-  $('#comment-' +<%= @comment.id %>).fadeOut();
+  $('#comment-' +<%= @comment.id %>).fadeOut(function(){
+    $('#comment-' +<%= @comment.id %>).remove()
+  });
 <% else %>
-  $('#comment-' +<%= @comment.id %>).prepend("<div class='alert-box radius'><%= flash[:error] = "Comment not be deleted. Try again." %></div>");
+  $('#comment-' +<%= @comment.id %>).prepend("<div class='alert-box radius'>Comment not be deleted. Try again.</div>");
 
 <% end %>

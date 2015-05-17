@@ -6,15 +6,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params.merge(post: @post))
     @topic = @post.topic
     @new_comment = Comment.new
-
     authorize @comment
+    @comment.save
 
-    if @comment.save
-      flash[:notice] = "Comment was saved."
-    else
-      flash[:error] = "Something bad happened."
-      # redirect_to [post.topic, post]
-    end
+
 
     respond_with(@comment) do |format|
       format.html { redirect_to [@post.topic, @post] }
@@ -28,12 +23,11 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     authorize @comment
+    @comment.destroy
 
-    if @comment.destroy
-      flash[:notice] = "Comment was removed."
-    else
-      flash[:error] = "Comment Couldn't be deleted. Try again."
-    end
+
+
+
 
     respond_with(@comment) do |format|
       format.html { redirect_to [@post.topic, @post] }

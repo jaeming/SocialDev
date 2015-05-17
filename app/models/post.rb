@@ -34,18 +34,20 @@ class Post < ActiveRecord::Base
   default_scope { order('rank DESC') }
   scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
 
-  after_create :create_vote
+  # after_create :create_vote
 
-  private
+
+  def save_with_initial_vote
+    ActiveRecord::Base.transaction do
+    self.create_vote
+    self.save
+    end
+  end
 
   def create_vote
     user.votes.create(value: 1, post: self)
   end
 
-  # def save_with_initial_vote
-  #   ActiveRecord::Base.transaction do
-  #   self.create_vote
-  #   end
-  # end
+
 
 end

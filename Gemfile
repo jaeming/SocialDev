@@ -19,7 +19,6 @@ group :development do
   gem 'sqlite3'
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'did_you_mean'
 end
 
 # Use sqlite3 as the database for Active Record
