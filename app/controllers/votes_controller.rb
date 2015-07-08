@@ -4,15 +4,11 @@ class VotesController < ApplicationController
 
   def up_vote
     update_vote!(1)
-
-    # http://apidock.com/rails/ActionController/Base/redirect_to
     redirect_to :back
   end
 
   def down_vote
     update_vote!(-1)
-
-    # http://apidock.com/rails/ActionController/Base/redirect_to
     redirect_to :back
   end
 
