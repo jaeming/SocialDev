@@ -4,34 +4,21 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.build(comment_params.merge(post: @post))
-    @topic = @post.topic
     @new_comment = Comment.new
     authorize @comment
     @comment.save
-
-
-
     respond_with(@comment) do |format|
       format.html { redirect_to [@post.topic, @post] }
     end
-
   end
-
-
 
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     authorize @comment
     @comment.destroy
-
-
-
-
-
     respond_with(@comment) do |format|
       format.html { redirect_to [@post.topic, @post] }
-
     end
   end
 
@@ -42,4 +29,3 @@ class CommentsController < ApplicationController
   end
 
 end
-
